@@ -1,3 +1,4 @@
 # how2git
-gitting good
-001
+gitting good:
+
+1 2 3 4 
