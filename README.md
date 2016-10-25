@@ -1,6 +1,3 @@
-# how2git
-gitting good:
+Scripts /Tools /Exercises
 
-0 - 0 = 0
 
-:^)
