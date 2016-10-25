@@ -27,7 +27,10 @@ def convert_infix(infix):
 
 	for i in infix:
 		if is_operator(i):
-			while(len(stack) != 0 and ((left_assoc(i) and (get_precedence(i) <= get_precedence(stack[-1])) or (not left_assoc(i) and (get_precedence(i) < get_precedence(stack[-1])))))):
+			while(len(stack) != 0
+			and ((left_assoc(i)
+			and (get_precedence(i) <= get_precedence(stack[-1]))
+			or (not left_assoc(i) and (get_precedence(i) < get_precedence(stack[-1])))))):
 				queue.append(stack.pop());
 			stack.append(i)
 		elif i == "(": stack.append(i)
