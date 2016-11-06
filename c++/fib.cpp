@@ -7,8 +7,8 @@ int main (int argc, char **argv)
 
 	for (unsigned int i = atoi(argv[1]); i-- && i < 47;)
 	{
-	printf("%i%c", fib, i?' ':'\n'); 		//toll, oder martin?
-	fib += tmp;
-	tmp  = fib - tmp;
+		printf("%i%c", fib, i?' ':'\n'); 		//toll, oder martin?
+		fib += tmp;
+		tmp  = fib - tmp;
 	}
 }
