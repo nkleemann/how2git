@@ -16,9 +16,7 @@ long double fak(long double n);
 
 int main()
 {
-  
-  long double x = 0.0l;
-  long double cosinus_x = 0.0l;  
+  long double x = 0.0l, cosinus_x = 0.0l;  
 
   std::cout <<"\ncos(x):\n\tx > ";
   std::cin  >> x;
@@ -27,7 +25,7 @@ int main()
 
   for (long double n = 0.0l; n < MAX_2N; n++)
   {
-        /* ********* DEBUG ********** 
+        /* ******** DEBUG *********** /
          
         std::cout << "\n"
 
