@@ -10,17 +10,13 @@
 #include <tgmath.h>
 #include <limits>
 
-
 #define MAX_2N 661 //max 2n! for long double ..fak(2n)
-
 
 long double fak(long double n);
 
 int main()
 {
-
-  while (1) //STRG + C ftw
-  {
+  
   long double x = 0.0l;
   long double cosinus_x = 0.0l;  
 
@@ -31,8 +27,6 @@ int main()
 
   for (long double n = 0.0l; n < MAX_2N; n++)
   {
-
-
         /* ********* DEBUG ********** 
          
         std::cout << "\n"
@@ -60,8 +54,6 @@ int main()
 
   std::cout << "\ncos(" << x << ") ≈ " << cosinus_x << std::endl;
   std::cout << "KORREKT: " << cos(x) << std::endl;
-  }
-
 }
 
 long double fak(long double n)
