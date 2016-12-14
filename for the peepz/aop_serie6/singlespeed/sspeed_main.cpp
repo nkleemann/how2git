@@ -31,9 +31,9 @@ int main(int argc, char **argv)
 
 	singlespeed.info();
 
-	std::cout << "Wheel circumference:\t" 			<< singlespeed.get_circumference();
-	std::cout << "\nExpansion:\t\t"  					<< singlespeed.get_expansion();
-	std::cout << "\nSpeed(" << CADENCE << ")\t\t" 	<< singlespeed.get_speed(CADENCE);
+	std::cout << "Wheel circumference:\t"         << singlespeed.get_circumference();
+	std::cout << "\nExpansion:\t\t"               << singlespeed.get_expansion();
+	std::cout << "\nSpeed(" << CADENCE << ")\t\t" << singlespeed.get_speed(CADENCE);
 
 	std::cout << "\n\n######################################\n\n";
 }

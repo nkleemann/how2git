@@ -3,8 +3,8 @@
  */
 
 #include "singlespeed.h"
-#include <cmath>		//for M_PI
-#include <iostream>		//for calls in info()
+#include <cmath>     //for M_PI
+#include <iostream>  //for calls in info()
 
 /**
  * Defining our constructor and
@@ -30,7 +30,7 @@ Singlespeed::Singlespeed(unsigned int cr, unsigned int sk, const double d)
 , wheel_diameter ( d)
 
 {
-		//Don't need nothing in here
+	//Don't need nothing in here
 }
 
 /**
@@ -76,7 +76,7 @@ void Singlespeed::info() const
 {
 	std::cout << "\n############## My BIKE ##############\n";
 
-	std::cout << "\nChainring:\t\t"      	<< chainring;
-	std::cout << "\nSprocket:\t\t" 		 	<< sprocket; 	
-	std::cout << "\nWheel Diameter:\t\t"   	<< wheel_diameter << std::endl;	
+	std::cout << "\nChainring:\t\t"      << chainring;
+	std::cout << "\nSprocket:\t\t"       << sprocket; 	
+	std::cout << "\nWheel Diameter:\t\t" << wheel_diameter << std::endl;	
 }

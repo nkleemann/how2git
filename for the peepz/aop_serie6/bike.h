@@ -3,12 +3,12 @@
 #define BIKE_H
 
 /**
- * 				LEGENDE
+ * LEGENDE
  * 				
- * BIKE             -> RadmitGang, ganz normales Rad 
- * chainrings       -> Kettenblaetter
- * cassette         -> Kassette (Alle Zahnraeder/Ritzel hinten)
- * count_cr         -> anzahl_kettenblatter 
+ * BIKE                 -> RadmitGang, ganz normales Rad 
+ * chainrings                 -> Kettenblaetter
+ * cassette                -> Kassette (Alle Zahnraeder/Ritzel hinten)
+ * count_cr                   -> anzahl_kettenblatter 
  * count_sk         -> anzahl_ritzel
  * cr               -> Kettenblatt
  * sk               -> Ritzel
@@ -26,7 +26,6 @@ class Bike
  */
 
 public:
-
 
 	/**
 	 * Declaring our Constructor.

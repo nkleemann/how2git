@@ -5,13 +5,13 @@
 /**
  * 				LEGENDE
  * 				
- * Singlespeed 		   -> "Eingangrad"
+ * Singlespeed         -> "Eingangrad"
  * chainring, cr       -> Zahnrad_vorne
  * sprocket, sk        -> Zahnrad_hinten
  * wheel_diameter,d    -> Raddurchmesser
  * circumference       -> Umfang
  * expansion           -> Entfaltung
- * cadence  		   -> Trittfrequenz
+ * cadence             -> Trittfrequenz
  */
 
 //Class Definition for a singlespeed-type bike
