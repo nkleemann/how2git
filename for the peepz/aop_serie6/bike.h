@@ -5,19 +5,19 @@
 /**
  * 				LEGENDE
  * 				
- * BIKE 		    -> RadmitGang, ganz normales Rad 
+ * BIKE             -> RadmitGang, ganz normales Rad 
  * chainrings       -> Kettenblaetter
- * cassette 		-> Kassette (Alle Zahnraeder/Ritzel hinten)
+ * cassette         -> Kassette (Alle Zahnraeder/Ritzel hinten)
  * count_cr         -> anzahl_kettenblatter 
- * count_sk			-> anzahl_ritzel
- * cr 				-> Kettenblatt
- * sk 				-> Ritzel
- * d 				-> Raddurchmesser
- * cadence 			-> Triitfrequenz in Umdrehung pro Minute
+ * count_sk         -> anzahl_ritzel
+ * cr               -> Kettenblatt
+ * sk               -> Ritzel
+ * d                -> Raddurchmesser
+ * cadence          -> Triitfrequenz in Umdrehung pro Minute
  */
 
 //Class definition for an ordenary Bike, which has gears ("RadMitGang")
-class Bike 
+class Bike
 {
 
 /**

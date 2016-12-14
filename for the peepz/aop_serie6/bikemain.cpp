@@ -9,9 +9,11 @@
 
 /**
  * The cadence we are generating with our
- * leg-canons. 
+ * leg-guns (currently fixed), will be
+ * fixed forever since this program
+ * is pretty much useless.
  */
-#define CADENCE 80
+#define CADENCE 90
 
 /**
  * Wrap printing this visual SEParation in a 
@@ -28,7 +30,7 @@ int main(int argc, char **argv)
 
 	/**
 	 * We call our constructor and generate
-	 * an object of the type "Bike" named "bike"
+	 * an object of type "Bike" named "bike"
 	 * and set the Wheel Diameter to 0.65mm
 	 */
 
@@ -42,9 +44,9 @@ int main(int argc, char **argv)
 	bike.info();
 
 	//This is a little messy, might implement this in Bike::info() aswell...
-	std::cout << "Wheel circumference:\t" 				<< bike.get_circumference();
-	std::cout << "\nExpansion:\t\t"  					<< bike.get_expansion();
-	std::cout << "\nSpeed(" << CADENCE << ")\t\t" 		<< bike.get_speed(CADENCE);
+	std::cout << "Wheel circumference:\t"         << bike.get_circumference();
+	std::cout << "\nExpansion:\t\t"               << bike.get_expansion();
+	std::cout << "\nSpeed(" << CADENCE << ")\t\t" << bike.get_speed(CADENCE);
 	sep();
 
 	/**
@@ -58,8 +60,8 @@ int main(int argc, char **argv)
 	bike.set_gear_ratio(1, 8);
 
 	std::cout << "Changing gear...\n";
-	std::cout << "\nExpansion:\t\t"  					<< bike.get_expansion();
-	std::cout << "\nSpeed(" << CADENCE << ")\t\t" 		<< bike.get_speed(CADENCE);
+	std::cout << "\nExpansion:\t\t"                << bike.get_expansion();
+	std::cout << "\nSpeed(" << CADENCE << ")\t\t"  << bike.get_speed(CADENCE);
 	sep();
 	
 	/**
@@ -74,6 +76,6 @@ int main(int argc, char **argv)
 			    to get our actual gear back. 
 	
 	 */
-	
 
 }
+

@@ -1,10 +1,22 @@
-/** 
- * Function definitions for our Class "Bike"
+//Function definitions for our Class "Bike"
+
+/**
+ * LEGENDE
+ * 				
+ * BIKE                 -> RadmitGang, ganz normales Rad 
+ * chainrings                 -> Kettenblaetter
+ * cassette                -> Kassette (Alle Zahnraeder/Ritzel hinten)
+ * count_cr                   -> anzahl_kettenblatter 
+ * count_sk         -> anzahl_ritzel
+ * cr               -> Kettenblatt
+ * sk               -> Ritzel
+ * d                -> Raddurchmesser
+ * cadence          -> Triitfrequenz in Umdrehung pro Minute
  */
 
 #include "bike.h"
-#include <cmath>		//for M_PI (3.14xxxxxyouknowthedeal)
-#include <iostream>		//for calls in info()
+#include <cmath>	//for M_PI (3.14xxxxxyouknowthedeal)
+#include <iostream>	//for calls in info()
 
 /**
  * Defining our constructor and
@@ -28,7 +40,7 @@ Bike::Bike(const double d)
 : wheel_diameter ( d)
 
 {
-		//Don't need nothing in here
+	//Don't need nothing in here
 }
 
 /**
@@ -56,6 +68,7 @@ unsigned int Bike::count_cr() const
 	 * C++ - style Arrays and don't want to deal with 
 	 * bulky syntax. :)
 	 */
+	
 	return ( sizeof(chainrings) / sizeof(*chainrings) );
 	
 }
@@ -70,6 +83,7 @@ unsigned int Bike::count_sk() const
 	/**
 	 * See "count_cr()" for more details
 	 */
+	
 	return ( sizeof(cassette) / sizeof(*cassette) );
 	
 }
@@ -89,6 +103,7 @@ void Bike::set_gear_ratio(unsigned int cr_nr, unsigned int sk_nr)
 	 * we subtract 1 from our argument. because chainring: 1
 	 * sits at chainrings[0].
 	 */
+	
 	gear_ratio = (chainrings[cr_nr] - 1) / ( cassette[sk_nr] - 1); 
 }
 
