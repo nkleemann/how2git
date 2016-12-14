@@ -5,7 +5,7 @@
  * 				
  * BIKE             -> RadmitGang, ganz normales Rad 
  * chainrings       -> Kettenblaetter
- * sprocket         ->
+ * sprocket         -> Ritzel
  * cassette         -> Kassette (Alle Zahnraeder/Ritzel hinten)
  * count_cr         -> anzahl_kettenblatter 
  * count_sk         -> anzahl_ritzel
