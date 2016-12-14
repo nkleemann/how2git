@@ -7,6 +7,7 @@
  * 				
  * BIKE             -> RadmitGang, ganz normales Rad 
  * chainrings       -> Kettenblaetter
+ * sprocket         -> Ritzel
  * cassette         -> Kassette (Alle Zahnraeder/Ritzel hinten)
  * count_cr         -> anzahl_kettenblatter 
  * count_sk         -> anzahl_ritzel
@@ -55,7 +56,7 @@ public:
 	void info() const;
 
 
-	//This one is not "const" since we alter the variable "gear_ratio" with it
+	//Not "const" since we alter the variable "gear_ratio" with it
 	void set_gear_ratio(unsigned int cr, unsigned int sk);
 
 //Attributes

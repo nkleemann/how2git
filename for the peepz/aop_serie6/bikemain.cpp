@@ -31,7 +31,7 @@ int main(int argc, char **argv)
 	/**
 	 * We call our constructor and generate
 	 * an object of type "Bike" named "bike"
-	 * and set the Wheel Diameter to 0.65mm
+	 * and set the Wheel diameter to 0.65mm
 	 */
 
 	Bike bike(0.65);
@@ -50,7 +50,7 @@ int main(int argc, char **argv)
 	sep();
 
 	/**
-	 * Now we take our bike and change gears!
+	 * Let's change gears!
 	 * (internally altering the gear_ratio - variable)
 	 *
 	 * This only affects speed and expension..

@@ -1,10 +1,11 @@
-//Function definitions for our Class "Bike"
+//Function definitions for our Class "Bike" in bike.h
 
 /**
  * LEGENDE
  * 				
  * BIKE             -> RadmitGang, ganz normales Rad 
  * chainrings       -> Kettenblaetter
+ * sprocket         ->
  * cassette         -> Kassette (Alle Zahnraeder/Ritzel hinten)
  * count_cr         -> anzahl_kettenblatter 
  * count_sk         -> anzahl_ritzel
@@ -56,7 +57,7 @@ unsigned int Bike::count_cr() const
 	 * return 2;
 	 *
 	 * here, but that has no learn effect,
-	 * i guess..
+	 * I guess..
 	 */
 	
 	/**
@@ -80,10 +81,7 @@ unsigned int Bike::count_cr() const
  */
 unsigned int Bike::count_sk() const
 {
-	/**
-	 * See "count_cr()" for more details
-	 */
-	
+	//See "count_cr()" for more details
 	return ( sizeof(cassette) / sizeof(*cassette) );
 	
 }
