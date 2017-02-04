@@ -33,7 +33,6 @@ typedef unsigned long ulong;
  */
 PBM::PBM()
 {
-
 }
 
 /**
@@ -189,9 +188,7 @@ void PBM::draw_rect(const ulong srow, const ulong scol, const ulong erow, const 
       }
 
       else
-      {
         continue;
-      }
     }
   }
 }
@@ -209,7 +206,7 @@ std::ofstream &operator<<(std::ofstream &out, const PBM &pbm)
 {
   for (ulong i = 0; i < pbm.header.size(); i++)
   {
-      out << pbm.header.at(i);
+    out << pbm.header.at(i);
   }
   
   ulong rows = pbm.pixels.size();
@@ -316,6 +313,7 @@ std::ifstream &operator>>(std::ifstream &in, PBM &pbm)
   /******         DONE      *******/
 
   return in;
+  
 }
 
 /******* DEBUG *******/

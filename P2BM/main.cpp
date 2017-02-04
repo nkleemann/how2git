@@ -1,5 +1,5 @@
 /**
- * Program entry - point.
+ * Program entryoint.
  *
  * Niklas Kleemann 02.02.2017
  */
@@ -8,7 +8,7 @@
 #include <iostream>
 #include <fstream>
 #include <exception>
-#include <cmath>
+
 
 void draw_rand(PBM &);
 bool main_routine(std::ifstream &, std::ofstream &, int argn, char **);
@@ -29,14 +29,13 @@ int main(int argc, char **argv)
     if (main_routine(ifile, ofile, argc, argv))
     {
     
-      //parse file into object‚
+      //parse file into object
 
       ifile >> pbm;
       ifile.close();
 
       
-      //draw random line & rectangle
-
+      //draw some random lines & rectangles
 
       for (int i = 0; i < 10e3; i++)
       {
@@ -51,8 +50,10 @@ int main(int argc, char **argv)
 
     }
 
+    //main_routine() handles output if something is off
+
     else
-      return 0;
+      return -1;
 
 
     //leaving you with a short fancy animation..
