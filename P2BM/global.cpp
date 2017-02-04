@@ -67,18 +67,12 @@ void draw_rand(PBM &pbm)
 
     sc = static_cast<unsigned long>(std::rand()) % pbm.cols();
     ec = sc;
-
-    if (i == 0)
-    {
-      pbm.draw_line(sr, sc, er, ec);
-    }
-    else
-    {
-      //not so pretty but quick & always works (srand::time is to vague..)
-      pbm.draw_rect(sr, sc, pbm.rows()-1, pbm.cols()-1);
-    }
+    
+    pbm.draw_line(sr, sc, er, ec);
+    pbm.draw_rect(sr, sc, pbm.rows()-1, pbm.cols()-1);
   }
 }
+
 
 /**
  * Just a fancy little animation to show-off. 
