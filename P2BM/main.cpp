@@ -34,7 +34,7 @@ int main(int argc, char **argv)
       ifile >> pbm;
       ifile.close();
 
-      
+
       //draw some random lines & rectangles
 
       for (int i = 0; i < 10e3; i++)
@@ -42,7 +42,7 @@ int main(int argc, char **argv)
         draw_rand(pbm);
       }
       
-
+      
       //write to file and close
 
       ofile << pbm;
@@ -55,14 +55,11 @@ int main(int argc, char **argv)
     else
       return -1;
 
-
     //leaving you with a short fancy animation..
     
     ani();
 
-
   }
-
 
 
   //very verbouse error handling right here
