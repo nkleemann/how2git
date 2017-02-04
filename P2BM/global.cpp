@@ -33,9 +33,8 @@ bool main_routine(std::ifstream &ifile, std::ofstream &ofile, int argn, char **a
   ofile.open(args[2]);
 
   if (ifile.is_open() && ofile.is_open())
-  {
     return 1;
-  }
+
   else
   {
     std::cout << "Error opening file" << std::endl;
@@ -44,6 +43,9 @@ bool main_routine(std::ifstream &ifile, std::ofstream &ofile, int argn, char **a
 }
 
 /**
+ * ! NOT OPTIMISED ! - just a quick sketch
+ *
+ * 
  * This function is just a little gimmick to make drawing lines
  * and boxes a little more interesting. It generates random Points
  * to draw a line and a rectangle in the given PBM object.
@@ -55,26 +57,29 @@ void draw_rand(PBM &pbm)
   
   ulong sr, sc, er, ec;
 
+  //seeding time in for loop now
+  std::srand(static_cast<unsigned int>(std::time(NULL)));
+
   //we draw a vertical line of random length and a randomly sized rectangle
   for (ulong i = 0; i < 2; i++)
   {
-
-    //seeding time in for loop now
-    std::srand(static_cast<unsigned int>(std::time(NULL)));
-
     er = static_cast<unsigned long>(std::rand()) % pbm.rows();
     sr = static_cast<unsigned long>(std::rand()) % er;
 
     sc = static_cast<unsigned long>(std::rand()) % pbm.cols();
     ec = sc;
-    
+
     pbm.draw_line(sr, sc, er, ec);
+    
+    //not so pretty but quick & always works (srand::time is to vague..)
     pbm.draw_rect(sr, sc, pbm.rows()-1, pbm.cols()-1);
+    
   }
 }
 
-
 /**
+ * ! Unix System calls
+ * 
  * Just a fancy little animation to show-off. 
  * 40x40px pbm, fixed.
  */
@@ -88,6 +93,7 @@ void ani()
     pbm2.draw_rect(0, 0, (int)(std::rand())%40, (int)(std::rand())%40);
     pbm2.print();
 
+    //2*nix4windows
     system("sleep 0.1");
     system("clear");
     flush(std::cout);
