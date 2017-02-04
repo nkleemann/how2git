@@ -155,11 +155,11 @@ void Bike::info() const
 
 	
 	std::cout << "\nChainrings:\t\t";
-	for (unsigned int i = 0; i < Bike::count_cr(); i++)
+	for (unsigned int i = 0; i < count_cr(); i++)
 		std::cout << chainrings[i] << " ";
 	
 	std::cout << "\nCassette:\t\t";
-	for (unsigned int i = 0; i < Bike::count_sk(); i++)
+	for (unsigned int i = 0; i < count_sk(); i++)
 		std::cout << cassette[i] << " ";
 
 	std::cout << "\nWheel Diameter:\t\t"   	<< wheel_diameter << std::endl;	

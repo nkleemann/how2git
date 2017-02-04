@@ -49,7 +49,7 @@ public:
 	unsigned int count_sk() const;
 	
 	double get_circumference() const;
-	double get_expansion() 	   const ;
+	double get_expansion() 	   const;
 	double get_speed(unsigned int cadence) const;
 
 	//shows some fancy output on the screen
