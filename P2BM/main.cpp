@@ -1,5 +1,5 @@
 /**
- * Program entryoint.
+ * Program entryoint. 
  *
  * Niklas Kleemann 02.02.2017
  */
@@ -42,7 +42,7 @@ int main(int argc, char **argv)
         draw_rand(pbm);
       }
       
-      
+
       //write to file and close
 
       ofile << pbm;

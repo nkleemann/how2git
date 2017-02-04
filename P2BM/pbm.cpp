@@ -26,7 +26,6 @@
 #include <string>
 #include <sstream>
 
-typedef unsigned long ulong;
 
 /**
  * Basic and default Constructor.
@@ -313,7 +312,7 @@ std::ifstream &operator>>(std::ifstream &in, PBM &pbm)
   /******         DONE      *******/
 
   return in;
-  
+
 }
 
 /******* DEBUG *******/
