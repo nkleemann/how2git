@@ -75,7 +75,7 @@ PBM::PBM(const ulong Row, const ulong Col, int Maxgrey, std::string Cmt)
  * @param  col Collumn-Index in data-array
  * @return     true if character is newline or space, false if not
  */
-bool PBM::is_whtspce(const size_t row, const size_t col) const
+bool PBM::is_whtspce(const ulong row, const ulong col) const
 {
   const unsigned char c = pixels.at(row).at(col);
   //since we only use newlines & spaces it is safe,atm, to discard the others
