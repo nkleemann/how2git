@@ -3,17 +3,11 @@
  *  Input from STDIN
  */
 
+
 #include <stdio.h>
 #include <stdlib.h>
 
-/**
- * Structure for our bitmap with *.pgm
- * file-extension.
- *
- * width, height: dimension of our bitmap
- * max:           highest brightness in greyscale map 
- * *data          array of bytes... (body?)
- */
+
 
 struct pgm
 {
@@ -22,6 +16,8 @@ struct pgm
   unsigned int  max;
   unsigned char *data;
 };
+
+
 
 int write_pgm(const char *filename, const struct pgm *frame) 
 {
@@ -43,13 +39,13 @@ int write_pgm(const char *filename, const struct pgm *frame)
   fwrite(frame->data, (size_t) frame->width, (size_t) frame->height, fp);
 
   fclose(fp);
-
   return 0;
 }
 
 
 int main(int argc, char **argv) 
 {
+
   int i, c;
   unsigned char byte;
   struct pgm frame;
@@ -103,4 +99,5 @@ int main(int argc, char **argv)
   write_pgm("bitmap.pgm", &frame);
 
   return 0;
+  
 }
