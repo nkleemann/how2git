@@ -8,7 +8,6 @@
 #include <stdlib.h>
 
 
-
 struct pgm
 {
   unsigned int  width;
@@ -16,7 +15,6 @@ struct pgm
   unsigned int  max;
   unsigned char *data;
 };
-
 
 
 int write_pgm(const char *filename, const struct pgm *frame) 
@@ -31,11 +29,9 @@ int write_pgm(const char *filename, const struct pgm *frame)
   }
 
   // Writing header
-  
   fprintf(fp, "P5\n%d %d\n%d\n", frame->width, frame->height, frame->max);
 
   // Writing data
-
   fwrite(frame->data, (size_t) frame->width, (size_t) frame->height, fp);
 
   fclose(fp);
@@ -45,7 +41,6 @@ int write_pgm(const char *filename, const struct pgm *frame)
 
 int main(int argc, char **argv) 
 {
-
   int i, c;
   unsigned char byte;
   struct pgm frame;
@@ -66,9 +61,7 @@ int main(int argc, char **argv)
   }
 
   // Max Greyscale Value
-  
   frame.max = 255;
-
 
   frame.data = malloc(frame.width * frame.height);
 
@@ -78,10 +71,8 @@ int main(int argc, char **argv)
     return 1;
   }
 
-
   for (i = 0; i < frame.width * frame.height; i++) 
   {
-
     c = fgetc(stdin);
     
     if (c == EOF) 
@@ -90,7 +81,6 @@ int main(int argc, char **argv)
       return 1;
     }
 
-    
     byte = (c == '0') ? 0 : 255;  
     
     frame.data[i] = byte;
@@ -99,5 +89,5 @@ int main(int argc, char **argv)
   write_pgm("bitmap.pgm", &frame);
 
   return 0;
-  
+
 }
