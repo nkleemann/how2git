@@ -1,5 +1,10 @@
 # Content
 
+## autotool
+
+Autotool is cool. But some exercises are very, very time-consuming while beeing not too educational.. 
+That's why I decided to turn those kind of exercises to coding exercises. ;)
+
 ## BinMaps
 
 Having some fun with Bitmaps in binary formats. WIP - only drawing tools until now. 
