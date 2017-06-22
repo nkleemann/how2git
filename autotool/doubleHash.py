@@ -20,11 +20,8 @@
                 - fixed insertions given by exercise
         
 
-
-
     I wrote this based on my exercise so you 
     may have to make changes. A lot. 
-
 
     Also you'll need a fast processor because bruteforcing
     is dumb. But some autotool exercises are too. ;)
@@ -199,7 +196,7 @@ def Insert(x):
 
 
 
-#                              Bruteforcing functions
+#          Bruteforcing functions
 
 
 # Bruteforcing Parameters of first hash function
@@ -265,7 +262,7 @@ def InsertRand():
 
 
 
-#                              Program Entry Point
+#          Program Entry Point
 
 
 # Generate our table
