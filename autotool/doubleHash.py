@@ -8,6 +8,7 @@
         
 
         Running the script:
+
             - Download script, save as "doubleHash.py"
             - Change things in script to match your exercise (see below) & PRESS SAVE 
             - Open Termimal / CMD.exe
@@ -44,6 +45,13 @@
 """
 
 import random
+
+
+# Global verbousity.
+# Change this to 0 if you want faster execution.
+# Change this to 1 if you want to see autotool-like messages
+# and hashtable status for every step.
+beVerbous = 0
 
 
 # Global size of hashtable # *
@@ -96,6 +104,7 @@ def genTable():
 
 
 # Prettyprint our hashtables
+# printLevel 1 
 def printTable():
     i = 0
     for el in hashTable:
@@ -136,12 +145,14 @@ def Insert(x):
     
     # Show Element to be inserted 
     # Show Output of h(x) & h2(x)
-    print "**** EXECUTING INSERT ****"
+    
+    if beVerbous:
+        print "**** EXECUTING INSERT ****"
 
-    print "Trying  %i\n" % x
-    print "x     = %i" % x
-    print "h(x)  = %i" % h(x)
-    print "h2(x) = %i" % h2(x)
+        print "Trying  %i\n" % x
+        print "x     = %i" % x
+        print "h(x)  = %i" % h(x)
+        print "h2(x) = %i" % h2(x)
 
     # Element at Position we want to insert at
     AtWntdPos = hashTable[h(x)]
@@ -157,7 +168,8 @@ def Insert(x):
     # Or contains x
     elif (AtWntdPos == x):
         # Nothing to do
-        print "\nContains %i" % x
+        if beVerbous:
+            print "\nContains %i" % x
 
 
     # Field is not empty (Start handling collision)
@@ -179,36 +191,42 @@ def Insert(x):
             AtNewPos  = hashTable[jmpdADR]
 
             # We begin jumping adresses
-            print "\nProbe at adress %i" % jmpdADR
+            if beVerbous:
+                print "\nProbe at adress %i" % jmpdADR
 
             # New Cell is empty
             if (AtNewPos == -1):
-                print "\nWas empty, Inserting %i at %i\n" % (x, jmpdADR)
+                print "\nWas empty, Inserting %i at %i" % (x, jmpdADR)
                 hashTable[jmpdADR] = x
                 break
 
             # New Cell allready contains x
             elif (AtNewPos == x):
-                print "Contains %i" % x
+                if beVerbous:
+                    print "Contains %i" % x
                 break
 
             # Handle infinite loop
             elif (haveSeen == AtNewPos):
-                print "Bad hash2; causing infinite loop"
+                print "\nBad hash2; causing infinite loop"
                 break
             
 
             # Cell is not free
-            print "Contains %i" % AtNewPos
+            if beVerbous:
+                print "Contains %i" % AtNewPos
 
             # Updating Jump counter
             JUMP = (JUMP + h2(x)) % size
             # DEBUG
             # print "LOOP JUMPVAL: %i" % JUMP
     
-    # Show tables
-    printTable()
-    print "******** FINISHED ********\n"
+    if beVerbous:
+        # Show tables
+        printTable()
+
+    if beVerbous:
+        print "******** FINISHED ********\n"
 
 
 
@@ -242,7 +260,7 @@ def randH2(n2LO, n2UP, m2LO, m2UP, modLO, modUP):
 # Show your Solution
 
 def logSolution():
-    print "! Found solution !\nYour hash functions:"
+    print "\n! Found solution !\nYour hash functions:"
 
     print "h(x)  = %i + %i * x mod %i" % (nH, mH, size)
     print "h2(x) = ((%i + (%i * x)) mod %i) mod %i" % (nH2, mH2, modH2, size)
@@ -254,7 +272,17 @@ def logSolution():
 # with "# /"
 
 def InsertRand():
+
+    # Making it easier for you to see beginning of 
+    # new insertion sequence
+    
+    print "\n\n\t\t-~-~-~-~ START INSERTION SEQUENCE -~-~-~-~\n\n"
+
+
     # Values you have to insert
+    # Delete all values in here and enter
+    # those you you have to insert manually.
+    # Order doesn't matter since we pick them randomly.
     toInsert = [86, 43, 218, 195] # *
 
     # / 
