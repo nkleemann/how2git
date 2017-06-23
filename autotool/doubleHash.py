@@ -296,7 +296,7 @@ def InsertRand():
     # One random pick left
     Insert(toInsert.pop(random.randint(0, len(toInsert)-1)))
 
-    #Insert(195)
+    # /
     Insert(196)
 
 
