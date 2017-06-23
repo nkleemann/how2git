@@ -7,7 +7,8 @@ That's why I decided to turn those kind of exercises to coding exercises. ;)
 
 ## BinMaps
 
-Having some fun with Bitmaps in binary formats. WIP - only drawing tools until now. 
+Having some fun with binary format Bitmaps and generating them in C/C++. 
+WIP - only drawing tools until now. 
 <p>Some examples using simple mathematical expressions:
 
 <p align="center">
