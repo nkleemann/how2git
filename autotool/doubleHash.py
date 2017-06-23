@@ -8,13 +8,14 @@
         
 
         Running the script:
+            - Download script, save as "doubleHash.py"
+            - Change things in script to match your exercise (see below) & PRESS SAVE 
             - Open Termimal / CMD.exe
             - Navigate to folder this file is saved in 
-              as "doubleHash.py"
             - Type 'python2 <doubleHash.py>
             - If you don't have python2 installed
                 -> https://www.python.org/download/releases/2.7.3/
-                
+
 
     What you have to do:
 
