@@ -48,9 +48,12 @@ import random
 
 
 # Global verbousity.
-# Change this to 0 if you want faster execution.
-# Change this to 1 if you want to see autotool-like messages
-# and hashtable status for every step.
+# Leave this at 0 when you want to solve the exercise,
+# for faster execution and easy-to-see solution.
+# 
+# Change it to 1 to have autotool like messages and 
+# constant overview over hashtables contents. 
+# (Not recommended in solve-mode)
 beVerbous = 0
 
 
