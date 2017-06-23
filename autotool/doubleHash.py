@@ -131,16 +131,19 @@ def Insert(x):
     print "h(x)  = %i" % h(x)
     print "h2(x) = %i" % h2(x)
 
+    # Element at Position we want to insert at
+    AtWntdPos = hashTable[h(x)]
+
 
     # Field is empty 
-    if (hashTable[h(x)] == -1):
+    if (AtWntdPos == -1):
 
         print "\nWas empty, Inserting %i at %i" % (x, h(x))
         # Insert x 
         hashTable[h(x)] = x
 
     # Or contains x
-    elif (hashTable[h(x)] == x):
+    elif (AtWntdPos == x):
         # Nothing to do
         print "\nContains %i" % x
 
@@ -159,31 +162,32 @@ def Insert(x):
         # Start Iterating
         while (1):
 
-            # Next Adress to jump to
+            # Next Adress & new Position to jump to
             jmpdADR = (h(x) + JUMP) % size
+            AtNewPos  = hashTable[jmpdADR]
 
             # We begin jumping adresses
             print "\nProbe at adress %i" % jmpdADR
 
             # New Cell is empty
-            if (hashTable[jmpdADR] == -1):
+            if (AtNewPos == -1):
                 print "\nWas empty, Inserting %i at %i\n" % (x, jmpdADR)
                 hashTable[jmpdADR] = x
                 break
 
             # New Cell allready contains x
-            elif (hashTable[jmpdADR] == x):
+            elif (AtNewPos == x):
                 print "Contains %i" % x
                 break
 
             # Handle infinite loop
-            elif (haveSeen == hashTable[jmpdADR]):
+            elif (haveSeen == AtNewPos):
                 print "Bad hash2; causing infinite loop"
                 break
             
 
             # Cell is not free
-            print "Contains %i" % (hashTable[jmpdADR])
+            print "Contains %i" % AtNewPos
 
             # Updating Jump counter
             JUMP = (JUMP + h2(x)) % size
