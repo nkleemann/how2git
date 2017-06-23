@@ -78,7 +78,7 @@ WantedHashTable = [-1,    # 0
                    140]   # 14
 
 
-# Declaring your hashTable (don't change here, see above)
+# Declaring your hashTable (don't change here, see below)
 hashTable = []
 
 # We need to generate your given hashTable for each run from scratch,
@@ -120,6 +120,9 @@ def printTable():
 # 
 # h(x)  = nH + (mH * x) mod size
 # h2(x) = ((nH2 + (mH2 * x)) mod modH2) mod size
+# 
+# You don't have to change these if you randomise 
+# them anyway
 
 # h(x)  # *
 nH    = 4
