@@ -5,6 +5,16 @@
         - Tells you if your given solution is correct 
         - Automation of parameters with fixed insertion order
         - Automation of insertion order with fixed parameters
+        
+
+        Running the script:
+            - Open Termimal / CMD.exe
+            - Navigate to folder this file is saved in 
+              as "doubleHash.py"
+            - Type 'python2 <doubleHash.py>
+            - If you don't have python2 installed
+                -> https://www.python.org/download/releases/2.7.3/
+                
 
     What you have to do:
 
@@ -16,8 +26,9 @@
                 - wanted hashtable
                 - function parameters for h1(x) (or function itself)
                 - same for h2(x)
-                - elements to insert 
-                - fixed insertions given by exercise
+                - in InsertRand() function
+                    - elements to insert (toInsert List)
+                    - fixed insertions given by exercise
         
 
     I wrote this based on my exercise so you 
