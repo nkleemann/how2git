@@ -224,8 +224,6 @@ def Insert(x):
     if beVerbous:
         # Show tables
         printTable()
-
-    if beVerbous:
         print "******** FINISHED ********\n"
 
 
