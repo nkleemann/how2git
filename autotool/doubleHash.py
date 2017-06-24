@@ -168,7 +168,7 @@ def Insert(x):
     # Field is empty 
     if (atWntdPos == -1):
 
-        print "\nWas empty, Inserting %i at %i" % (x, h(x))
+        print "Inserted%4i at addr. %2i" % (x, h(x))
         # Insert x 
         hashTable[h(x)] = x
 
@@ -203,7 +203,7 @@ def Insert(x):
 
             # New Cell is empty
             if (atNewPos == -1):
-                print "\nWas empty, Inserting %i at %i" % (x, jmpdADR)
+                print "Inserted%4i at addr. %2i" % (x, jmpdADR)
                 hashTable[jmpdADR] = x
                 break
 
@@ -265,7 +265,8 @@ def randH2(n2LO, n2UP, m2LO, m2UP, modLO, modUP):
 # Show your Solution
 
 def logSolution():
-    print "\n! Found solution !\nYour hash functions:"
+    print "\n\n! Found solution !\nLast insertion order was correct."
+    print"\nGenerated hash functions:"
 
     print "h(x)  = %i + %i * x mod %i" % (nH, mH, size)
     print "h2(x) = ((%i + (%i * x)) mod %i) mod %i" % (nH2, mH2, modH2, size)
