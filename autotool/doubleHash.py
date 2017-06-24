@@ -48,7 +48,7 @@ import random
 
 
 # Global verbousity.
-# Leave this at 0 when you want to solve the exercise,
+# Leave this at 0 if you want to solve the exercise,
 # for faster execution and easy-to-see solution.
 # 
 # Change it to 1 to have autotool like messages and 
@@ -61,7 +61,7 @@ beVerbous = 0
 size = 15 
 
 # Table given by instruction # *
-WantedHashTable = [-1,    # 0
+wantedHashTable = [-1,    # 0
                    211,   # 1
                    86,    # 2
                    43,    # 3
@@ -83,7 +83,8 @@ hashTable = []
 
 # We need to generate your given hashTable for each run from scratch,
 # that's why we need a function to do so.
-# Just add the values you are given at the right index
+# Just add the values you are given at the right index.
+# *
 def genTable():
     hashTable[:] = []
     hashTable.extend(  
@@ -111,7 +112,7 @@ def genTable():
 def printTable():
     i = 0
     for el in hashTable:
-        print "%i  %i\t\t%i" % (i, el, WantedHashTable[i])
+        print "%i  %i\t\t%i" % (i, el, wantedHashTable[i])
         i += 1  
                           
 
@@ -161,18 +162,18 @@ def Insert(x):
         print "h2(x) = %i" % h2(x)
 
     # Element at Position we want to insert at
-    AtWntdPos = hashTable[h(x)]
+    atWntdPos = hashTable[h(x)]
 
 
     # Field is empty 
-    if (AtWntdPos == -1):
+    if (atWntdPos == -1):
 
         print "\nWas empty, Inserting %i at %i" % (x, h(x))
         # Insert x 
         hashTable[h(x)] = x
 
     # Or contains x
-    elif (AtWntdPos == x):
+    elif (atWntdPos == x):
         # Nothing to do
         if beVerbous:
             print "\nContains %i" % x
@@ -194,33 +195,33 @@ def Insert(x):
 
             # Next Adress & new Position to jump to
             jmpdADR = (h(x) + JUMP) % size
-            AtNewPos  = hashTable[jmpdADR]
+            atNewPos  = hashTable[jmpdADR]
 
             # We begin jumping adresses
             if beVerbous:
                 print "\nProbe at adress %i" % jmpdADR
 
             # New Cell is empty
-            if (AtNewPos == -1):
+            if (atNewPos == -1):
                 print "\nWas empty, Inserting %i at %i" % (x, jmpdADR)
                 hashTable[jmpdADR] = x
                 break
 
             # New Cell allready contains x
-            elif (AtNewPos == x):
+            elif (atNewPos == x):
                 if beVerbous:
                     print "Contains %i" % x
                 break
 
             # Handle infinite loop
-            elif (haveSeen == AtNewPos):
+            elif (haveSeen == atNewPos):
                 print "\nBad hash2; causing infinite loop"
                 break
             
 
             # Cell is not free
             if beVerbous:
-                print "Contains %i" % AtNewPos
+                print "Contains %i" % atNewPos
 
             # Updating Jump counter
             JUMP = (JUMP + h2(x)) % size
@@ -317,7 +318,7 @@ def InsertRand():
 genTable()
 
 # Iterating until we find the solution
-while (hashTable != WantedHashTable):
+while (hashTable != wantedHashTable):
 
     # New Try, generate new table
     genTable()
@@ -332,6 +333,7 @@ while (hashTable != WantedHashTable):
 
     # Execute random insertion order
     InsertRand()
+
 
 
 
