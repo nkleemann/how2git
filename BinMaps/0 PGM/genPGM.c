@@ -3,7 +3,6 @@
  *  Input from STDIN
  */
 
-
 #include <stdio.h>
 #include <stdlib.h>
 
