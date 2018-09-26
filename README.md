@@ -2,8 +2,7 @@
 
 ## autotool
 
-Autotool is cool. But some exercises are very, very time-consuming while beeing not too educational.. 
-That's why I decided to turn those kind of exercises to coding exercises. ;)
+A dumb little script I made to help me and others solve an online exercise.
 
 ## BinMaps
 
