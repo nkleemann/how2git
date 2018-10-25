@@ -1,9 +1,60 @@
 module Main where
 
+import Data.List
+
+type Trigraph = (Char, Char, Char)
+
 crack :: String -> String
-crack s = undefined
+crack s = s
 
 main :: IO ()
 main = do
     code <- readFile "Code.txt"
     putStrLn $ crack code
+
+
+
+-- | Find all combinations of adjacent character tripples.
+trigraphs :: String -> [Trigraph]
+trigraphs cs = case cs of
+    (c1:c2:c3:cs') -> (c1, c2, c3) : trigraphs cs'
+    _              -> []
+
+-- | Find trigraph duplicates and save their indices.
+occurences :: [Trigraph] -> [(Trigraph, [Int])]
+occurences ts = filter ((> 1) . length . snd) $ map (\t -> (t, (elemIndices t ts))) ts
+
+-- | Calculate the offset between the occurences of the trigraphs
+offsets :: [(Trigraph, [Int])] -> [(Trigraph, [Int])]
+offsets occs = map (\(t, is) -> (t, offsH is)) occs
+
+-- Offset Helper function
+offsH is = tail $ map (\x -> x - firstOcc) is
+    where firstOcc = head is
+
+
+
+
+
+
+code = 
+    "GORQSCUOCYGGXNEQOPQXGDECUOCSSSBQCHPLRJJYFLHFPEUYZECZEGQVLFFPQ" ++
+    "JLQNQBFXUGGEDFQOYEQCWUEQNCUOQMNIQJRQOYGGUQJQQOBUFQQHCYFGZTYYL" ++
+    "CUUCZLMQOLQOGZTZQTMZECDFGZFGZFPNFQFJKYUCZFPLBCTMDASKAECDHPGOB" ++
+    "EUGYNSZHFUOQUDFFMGOIBQTRTFKMTBQSFMOBXVLSPBQSGZIGEUMDJQOICZPBQ" ++
+    "SPMFSYMGOICZCCLVCSFLNFQFFFQODUMKQEGQECZTMSFLMOLFFLWFPZHCZSCEX" ++
+    "GQTAUFLOFDUDRUPLRBLFBQKIMDSMDBAFJMZUFDJJXFPPBPWEPMNYYZQFFPKAS" ++
+    "LVMDELQOQUOBIFPPFLMMQSFLDFDUMKQCCLFGOILQUGZJFDFPSFQMNRTFGFTGZ" ++
+    "EDUMKSFLDFQNJQTFPZJATUQKTRQNYFJQUFPFXMDECZBSOIUQHCZECECCPFSFV" ++
+    "LSTUMOBQMQPFLRJJYHCZSCEIYQVDUHGYMYGGCPFPLFGFESDDFSFKMDFFIYNFL" ++
+    "MCCDBSOIUQJJSFLDFZQACUDFZVLSFLUOTQSQOIGQECZFLWVJFVPQMJQOMPFPE" ++
+    "QPMDFXJATFLLVQMNKQOFMFLSFLGORQSQOIGQEJUDFHFPEUYZECZXCDECZLMQO" ++
+    "LQOQAXGDEXGNZQJQBJCXJKQOEXJQOIQBSYOIGSFLDBSYVLFFPQJLQNDUMKPSY" ++
+    "YBUQJRSFFQOBQJLRJJYWCDTRMOBQOBQSQUDFPVPOICUOCMVQSFNDBCSUCPBPE" ++
+    "UCXMSZHCUOXQMLQSNQSQAFLXJATLCUUCZBSEACUDFZFRIBCTSCZEBMTKQSIYB" ++
+    "JPJCEFPRJJYHYFUSZHLMDFPFKHFPEUYQOBZJQUNBQVREDFEQPMDFUHCZSYGNG" ++
+    "ZFGZFPTBLPMSZHGYTGZOCPFQWMYETGEDFQOBDBKMTMPFPUOCUOCYCCEPLPFPE" ++
+    "FPDFEQOBQOZLXRDBEUTATFLHFPXBSRECDIYZEJGOENFQFFFF"
+
+
+my_offsets = offsets $ occurences $ trigraphs code
