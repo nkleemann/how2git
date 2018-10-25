@@ -1,7 +1,7 @@
 module Main where
 
 crack :: String -> String
-crack s = s
+crack s = undefined
 
 main :: IO ()
 main = do
