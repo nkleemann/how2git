@@ -1,12 +1,10 @@
 # Content
 
-## itsec
+## ItSec
 
-Chiffres, Exploits (?) and more
-
-## autotool
-
-A dumb little script I made to help me and others solve an online exercise.
+Tinkering with Cryptography and Exploits (?)
+## Vigenere
+* Partial fully automated Vigenere Cipher key cracker for german and english texts.
 
 ## BinMaps
 
@@ -24,3 +22,7 @@ WIP - only drawing tools until now.
 ## P2BM
 
 Simple Tool to read and write to ASCII PBM Bitmaps. Freshman Programming Exam. 
+
+## Scripts
+
+* A dumb little script I made to help me and others solve an online exercise.
