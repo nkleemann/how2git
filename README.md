@@ -2,7 +2,6 @@
 
 ## ItSec
 
-Tinkering with Cryptography and Exploits (?)
 ## Vigenere
 * Partial fully automated Vigenere Cipher key cracker for a ((subset)) of german and english texts.
 
