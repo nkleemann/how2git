@@ -93,6 +93,7 @@ findEncKey :: CharHistogram -> String
 findEncKey = map (chr . (65 +) . snd) . map maxiAt . transpose . map snd
     where maxiAt xs = maximumBy (comparing fst) (zip xs [0..])
 
+
 -- | Decrypting the Key is a manner of caesar-shifting the encrypted one.
 decKey :: Char -> String -> String
 decKey mostCommonChar = map shiftBack
